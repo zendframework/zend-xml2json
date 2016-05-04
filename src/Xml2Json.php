@@ -42,7 +42,6 @@ class Xml2Json
      * NOTE: Encoding native javascript expressions via Zend\Json\Expr is not
      * possible.
      *
-     * @deprecated by https://github.com/zendframework/zf2/pull/6778
      * @param string $xmlStringContents XML String to be converted.
      * @param  bool $ignoreXmlAttributes Include or exclude XML attributes in
      *     the conversion process.
