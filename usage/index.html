@@ -157,7 +157,6 @@ not provided, then the default behavior is to ignore the XML attributes.</p>
 <p>A basic example follows:</p>
 <pre class="codehilite"><code class="language-php">$jsonContents = Zend\Xml2Json\Xml2Json::fromXml($xmlStringContents, true);</code></pre>
 
-
 <p><code>Zend\Xml2Json\Xml2Json::fromXml()</code> converts the XML formatted string input
 parameter and returns the equivalent JSON formatted string output. In case of an
 XML input format error or conversion logic error, it raises an exception.</p>
@@ -191,12 +190,10 @@ representation of the XML attributes in the returned JSON.</p>
     &lt;/book&gt;
 &lt;/books&gt;</code></pre>
 
-
 <p>Assuming that the above is captured in the variable <code>$xml</code>, we'll now pass it to
 the following code:</p>
 <pre class="codehilite"><code class="language-php">// Passing the second parameter to ensure we get attributes as well.
 $json = Zend\Xml2Json\Xml2Json::fromXml($xml, false);</code></pre>
-
 
 <p>This results in the following JSON:</p>
 <pre class="codehilite"><code class="language-json">{
