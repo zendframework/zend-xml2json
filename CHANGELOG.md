@@ -26,13 +26,18 @@ All notable changes to this project will be documented in this file, in reverse 
 
 - Nothing.
 
+### Changed
+
+- Nothing.
+
 ### Deprecated
 
 - Nothing.
 
 ### Removed
 
-- Nothing.
+- [#1](https://github.com/zendframework/zend-xml2json/pull/1) removes an
+  obsolete `@deprecated` annotation.
 
 ### Fixed
 
