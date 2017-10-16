@@ -2,11 +2,12 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 3.0.1 - TBD
+## 3.1.0 - 2017-10-16
 
 ### Added
 
-- Nothing.
+- [#5](https://github.com/zendframework/zend-xml2json/pull/5) adds support for
+  PHP 7.1 and 7.2.
 
 ### Changed
 
@@ -20,6 +21,13 @@ All notable changes to this project will be documented in this file, in reverse 
 
 - [#1](https://github.com/zendframework/zend-xml2json/pull/1) removes an
   obsolete `@deprecated` annotation.
+
+- [#5](https://github.com/zendframework/zend-xml2json/pull/5) removes support
+  for PHP 5.5. The code likely still runs on that version, but we no longer
+  support it.
+
+- [#5](https://github.com/zendframework/zend-xml2json/pull/5) removes support
+  for HHVM.
 
 ### Fixed
 
