@@ -6,4 +6,4 @@
 zend-xml2json provides functionality for converting XML structures to JSON.
 
 - File issues at https://github.com/zendframework/zend-xml2json/issues
-- Documentation is at https://zendframework.github.io/zend-xml2json/
+- Documentation is at https://docs.zendframework.com/zend-xml2json/
