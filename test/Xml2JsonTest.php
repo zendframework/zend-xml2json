@@ -7,7 +7,7 @@
 
 namespace ZendTest\Xml2Json;
 
-use PHPUnit\Framework\TestCase as TestCase;
+use PHPUnit\Framework\TestCase;
 use Zend\Json\Json;
 use Zend\Xml2Json\Xml2Json;
 
