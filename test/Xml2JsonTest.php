@@ -1,13 +1,13 @@
 <?php
 /**
- * @link      http://github.com/zendframework/zend-xml2json for the canonical source repository
- * @copyright Copyright (c) 2005-2017 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd New BSD License
+ * @see       https://github.com/zendframework/zend-xml2json for the canonical source repository
+ * @copyright Copyright (c) 2005-2018 Zend Technologies USA Inc. (https://www.zend.com)
+ * @license   https://github.com/zendframework/zend-xml2json/blob/master/LICENSE.md New BSD License
  */
 
 namespace ZendTest\Xml2Json;
 
-use PHPUnit\Framework\TestCase as TestCase;
+use PHPUnit\Framework\TestCase;
 use Zend\Json\Json;
 use Zend\Xml2Json\Xml2Json;
 
