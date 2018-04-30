@@ -3,7 +3,7 @@
         {
             "location": "/",
             "text": "zend-xml2json\n\n\n\n\n\n\nzend-xml2json provides functionality for converting XML structures to JSON.\n\n\n\n\nFile issues at https://github.com/zendframework/zend-xml2json/issues\n\n\nDocumentation is at https://docs.zendframework.com/zend-xml2json/",
-            "title": "Home"
+            "title": "zend-xml2json"
         },
         {
             "location": "/#zend-xml2json",
