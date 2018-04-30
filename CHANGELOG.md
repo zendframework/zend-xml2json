@@ -24,7 +24,7 @@ All notable changes to this project will be documented in this file, in reverse 
 
 - Nothing.
 
-## 3.1.1 - TBD
+## 3.1.1 - 2018-04-30
 
 ### Added
 
@@ -32,7 +32,7 @@ All notable changes to this project will be documented in this file, in reverse 
 
 ### Changed
 
-- Nothing.
+- [#8](https://github.com/zendframework/zend-xml2json/pull/8) ensures that tests against PHP 7.2 are not allowed to fail.
 
 ### Deprecated
 
