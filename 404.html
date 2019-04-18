@@ -7,11 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Zend\Xml2Json">  
-    <link rel="shortcut icon" href="../img/favicon.ico">
+    <link rel="shortcut icon" href="//img/favicon.ico">
 
-    <title>Usage - zend-xml2json - Zend Framework Docs</title>
+    <title>zend-xml2json - Zend Framework Docs</title>
 
-    <link rel="stylesheet" href="../css/styles-f3b53f5ceb.css">
+    <link rel="stylesheet" href="//css/styles-f3b53f5ceb.css">
 </head>
 <body id="page-top">
 
@@ -31,7 +31,7 @@
             
             <span class="navbar-brand">
                 <a class="logo-link" href="https://framework.zend.com/" data-tooltip data-placement="bottom" title="Go to the ZF homepage">
-                    <img src="../img/zend-framework-logo.svg" height="28" alt="Zend Framework">
+                    <img src="//img/zend-framework-logo.svg" height="28" alt="Zend Framework">
                 </a>
             </span>
         </div>
@@ -66,7 +66,7 @@
                     
     <div class="subnavigation hidden-print">
         <h4 class="subnavigation__title">
-            <a href="..">zend-xml2json</a>
+            <a href="/.">zend-xml2json</a>
         </h4>
 
         <h5 class="subnavigation__subtitle">Table of Contents</h5>
@@ -75,13 +75,13 @@
             
                 
                     <li class="subnavigation__list-item ">
-                        <a href=".." class="subnavigation__link">zend-xml2json</a>
+                        <a href="/." class="subnavigation__link">zend-xml2json</a>
                     </li>
                 
             
                 
-                    <li class="subnavigation__list-item subnavigation__list-item--active">
-                        <a href="./" class="subnavigation__link">Usage</a>
+                    <li class="subnavigation__list-item ">
+                        <a href="/usage/" class="subnavigation__link">Usage</a>
                     </li>
                 
             
@@ -154,159 +154,18 @@
             <div class="col-md-9 col-xs-12 content" role="main">
             <!-- content:begin -->
                 
-                    <ol class="breadcrumb" role="navigation" aria-label="breadcrumbs navigation">
-    <li><a href="https://framework.zend.com/">Home</a></li>
 
-    
-        <li><a href="https://docs.zendframework.com/">Documentation</a></li>
+<h1 class="content__title">404</h1>
+<blockquote>
+    <h3>Something went wrong!</h3>
+    <p>
+        We're sorry, but the page you are looking for does not exist.
+    </p>
+</blockquote>
 
-        
-            <li><a href="..">zend-xml2json</a></li>
-
-            
-
-            <li class="active">Usage</li>
-        
-    
-</ol>
+<a href="/" class="btn btn-default" role="button">Go to homepage</a>
 
 
-    
-
-    
-    
-
-    
-    
-        <div class="toc">
-            <h6 class="toc__headline">In This Article</h6>
-            <ul class="toc__list">
-                
-                    <li class="toc__entry">
-                        <a href="#example" class="toc__link">Example</a>
-                    </li>
-                
-            </ul>
-        </div>
-    
-
-
-    <h1 id="xml-to-json-conversion">XML to JSON conversion</h1>
-<p>zend-xml2json provides a convenience method for transforming XML formatted data
-into JSON format.  This feature was inspired from an <a href="http://www.ibm.com/developerworks/xml/library/x-xml2jsonphp/">IBM developerWorks
-article</a>.</p>
-<p>zend-xml2json provides the static method <code>Zend\Xml2Json\Xml2Json::fromXml()</code>.
-This method will generate JSON from a given XML input. This method takes any
-arbitrary XML string as an input parameter, and optionally a boolean parameter
-to instruct the conversion logic as to whether or not to ignore XML attributes
-during the conversion process. If the optional flag for converting attributes is
-not provided, then the default behavior is to ignore the XML attributes.</p>
-<p>A basic example follows:</p>
-<pre class="codehilite"><code class="language-php">$jsonContents = Zend\Xml2Json\Xml2Json::fromXml($xmlStringContents, true);</code></pre>
-
-<p><code>Zend\Xml2Json\Xml2Json::fromXml()</code> converts the XML formatted string input
-parameter and returns the equivalent JSON formatted string output. In case of an
-XML input format error or conversion logic error, it raises an exception.</p>
-<p>The conversion logic uses recursive techniques to traverse the XML tree,
-supporting up to 25 levels deep. Beyond that depth, it raises a
-<code>Zend\Xml2Json\Exception\RecursionException</code>.</p>
-<h2 id="example">Example</h2>
-<p>The following example demonstrates both the XML input string passed to and the JSON
-output string returned from <code>Zend\Xml2Json\Xml2Json::fromXml()</code>. This example
-passes a boolean false to the second argument in order to receive a
-representation of the XML attributes in the returned JSON.</p>
-<p>First, let's look at the XML:</p>
-<pre class="codehilite"><code class="language-xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;books&gt;
-    &lt;book id="1"&gt;
-        &lt;title&gt;Code Generation in Action&lt;/title&gt;
-        &lt;author&gt;&lt;first&gt;Jack&lt;/first&gt;&lt;last&gt;Herrington&lt;/last&gt;&lt;/author&gt;
-        &lt;publisher&gt;Manning&lt;/publisher&gt;
-    &lt;/book&gt;
-
-    &lt;book id="2"&gt;
-        &lt;title&gt;PHP Hacks&lt;/title&gt;
-        &lt;author&gt;&lt;first&gt;Jack&lt;/first&gt;&lt;last&gt;Herrington&lt;/last&gt;&lt;/author&gt;
-        &lt;publisher&gt;O'Reilly&lt;/publisher&gt;
-    &lt;/book&gt;
-
-    &lt;book id="3"&gt;
-        &lt;title&gt;Podcasting Hacks&lt;/title&gt;
-        &lt;author&gt;&lt;first&gt;Jack&lt;/first&gt;&lt;last&gt;Herrington&lt;/last&gt;&lt;/author&gt;
-        &lt;publisher&gt;O'Reilly&lt;/publisher&gt;
-    &lt;/book&gt;
-&lt;/books&gt;</code></pre>
-
-<p>Assuming that the above is captured in the variable <code>$xml</code>, we'll now pass it to
-the following code:</p>
-<pre class="codehilite"><code class="language-php">// Passing the second parameter to ensure we get attributes as well.
-$json = Zend\Xml2Json\Xml2Json::fromXml($xml, false);</code></pre>
-
-<p>This results in the following JSON:</p>
-<pre class="codehilite"><code class="language-json">{
-   "books" : {
-      "book" : [ {
-         "@attributes" : {
-            "id" : "1"
-         },
-         "title" : "Code Generation in Action",
-         "author" : {
-            "first" : "Jack", "last" : "Herrington"
-         },
-         "publisher" : "Manning"
-      }, {
-         "@attributes" : {
-            "id" : "2"
-         },
-         "title" : "PHP Hacks", "author" : {
-            "first" : "Jack", "last" : "Herrington"
-         },
-         "publisher" : "O'Reilly"
-      }, {
-         "@attributes" : {
-            "id" : "3"
-         },
-         "title" : "Podcasting Hacks", "author" : {
-            "first" : "Jack", "last" : "Herrington"
-         },
-         "publisher" : "O'Reilly"
-      }
-   ]}
-}</code></pre>
-
-
-
-    <nav>
-    <ul class="page-nav hidden-print">
-
-        
-        <li class="page-nav__item">
-            
-                <a rel="prev" class="page-nav__link page-nav__link--prev" href="..">
-                    <i class="fa fa-chevron-left"></i> Previous
-                </a>
-            
-        </li>
-
-        
-        <li class="page-nav__item">
-            
-        </li>
-    </ul>
-</nav>
-
-
-
-    <div class="help-wanted">
-        <p>
-            Found a mistake or want to contribute to the documentation?
-            <a href="https://github.com/zendframework/zend-xml2json/edit/master/docs/book/usage.md" target="_blank" class="help-wanted__link">
-                Edit this page on GitHub!
-            </a>
-        </p>
-    </div>
-
-                
             <!-- content:end -->
             </div>
             <div class="col-md-3 col-xs-12 sidebar">
@@ -322,7 +181,7 @@ $json = Zend\Xml2Json\Xml2Json::fromXml($xml, false);</code></pre>
                     
     <div class="subnavigation hidden-print">
         <h4 class="subnavigation__title">
-            <a href="..">zend-xml2json</a>
+            <a href="/.">zend-xml2json</a>
         </h4>
 
         <h5 class="subnavigation__subtitle">Table of Contents</h5>
@@ -331,13 +190,13 @@ $json = Zend\Xml2Json\Xml2Json::fromXml($xml, false);</code></pre>
             
                 
                     <li class="subnavigation__list-item ">
-                        <a href=".." class="subnavigation__link">zend-xml2json</a>
+                        <a href="/." class="subnavigation__link">zend-xml2json</a>
                     </li>
                 
             
                 
-                    <li class="subnavigation__list-item subnavigation__list-item--active">
-                        <a href="./" class="subnavigation__link">Usage</a>
+                    <li class="subnavigation__list-item ">
+                        <a href="/usage/" class="subnavigation__link">Usage</a>
                     </li>
                 
             
@@ -412,11 +271,11 @@ $json = Zend\Xml2Json\Xml2Json::fromXml($xml, false);</code></pre>
 </footer>
 
     <script>
-        var base_url = '..',
+        var base_url = '/',
             siteName = 'zend-xml2json';
     </script>
-    <script src="../js/scripts-8d7ae56abf.js"></script>
-        <script src="../search/main.js"></script>
+    <script src="//js/scripts-8d7ae56abf.js"></script>
+        <script src="/search/main.js"></script>
 
     
     <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
