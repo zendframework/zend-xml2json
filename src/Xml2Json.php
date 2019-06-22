@@ -91,14 +91,14 @@ class Xml2Json
      * The third parameter will be used internally within this function during
      * the recursive calls.
      *
-     * This function converts a SimpleXMLElement object into a PHP array by
+     * This function converts a SimpleXMLElement object into a PHP object by
      * calling a recursive function in this class; once all XML elements are
      * stored to a PHP array, it is returned to the caller.
      *
      * @param SimpleXMLElement $simpleXmlElementObject
      * @param bool $ignoreXmlAttributes
      * @param int $recursionDepth
-     * @return array
+     * @return object
      * @throws Exception\RecursionException if the XML tree is deeper than the
      *     allowed limit.
      */
@@ -163,7 +163,7 @@ class Xml2Json
             $childArray['@text'] = $value;
         }
 
-        return [$name => $childArray];
+        return [$name => (object)$childArray];
     }
 
     /**
