@@ -127,7 +127,7 @@ class Xml2Json
         $value      = static::getXmlValue($simpleXmlElementObject);
         $attributes = (array) $simpleXmlElementObject->attributes();
 
-        if (! count($children)) {
+        if (! $children) {
             if (! empty($attributes) && ! $ignoreXmlAttributes) {
                 foreach ($attributes['@attributes'] as $k => $v) {
                     $attributes['@attributes'][$k] = static::getXmlValue($v);
