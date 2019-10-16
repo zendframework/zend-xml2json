@@ -1,9 +1,8 @@
 docs_dir: docs/book
 site_dir: docs/html
-pages:
-    - index.md
+nav:
+    - Home: index.md
     - Usage: usage.md
 site_name: zend-xml2json
-site_description: Zend\Xml2Json
+site_description: "Convert XML documents to JSON"
 repo_url: 'https://github.com/zendframework/zend-xml2json'
-copyright: 'Copyright (c) 2005-2018 <a href="https://www.zend.com/">Zend Technologies USA Inc.</a>'
