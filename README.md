@@ -1,5 +1,9 @@
 # zend-xml2json
 
+> ## Repository abandoned 2019-12-31
+>
+> This repository has moved to laminas/laminas-xml2json.
+
 [![Build Status](https://secure.travis-ci.org/zendframework/zend-xml2json.svg?branch=master)](https://secure.travis-ci.org/zendframework/zend-xml2json)
 [![Coverage Status](https://coveralls.io/repos/github/zendframework/zend-xml2json/badge.svg?branch=master)](https://coveralls.io/github/zendframework/zend-xml2json?branch=master)
 
