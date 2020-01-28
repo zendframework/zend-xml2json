@@ -50,16 +50,7 @@ class Xml2Json
      */
     public static function fromXml($xmlStringContents, $ignoreXmlAttributes = true)
     {
-        // Load the XML formatted string into a Simple XML Element object.
-        $simpleXmlElementObject = XmlSecurity::scan($xmlStringContents);
-
-        // If it is not a valid XML content, throw an exception.
-        if (! $simpleXmlElementObject) {
-            throw new Exception\RuntimeException('Function fromXml was called with invalid XML');
-        }
-
-        // Call the recursive function to convert the XML into a PHP array.
-        $resultArray = static::processXml($simpleXmlElementObject, $ignoreXmlAttributes);
+        $resultArray = static::processXmlContent($xmlStringContents, $ignoreXmlAttributes);
 
         // Convert the PHP array to JSON using Json::encode.
         return Json::encode($resultArray);
@@ -100,14 +91,14 @@ class Xml2Json
      * The third parameter will be used internally within this function during
      * the recursive calls.
      *
-     * This function converts a SimpleXMLElement object into a PHP array by
+     * This function converts a SimpleXMLElement object into a PHP object by
      * calling a recursive function in this class; once all XML elements are
      * stored to a PHP array, it is returned to the caller.
      *
      * @param SimpleXMLElement $simpleXmlElementObject
      * @param bool $ignoreXmlAttributes
      * @param int $recursionDepth
-     * @return array
+     * @return object
      * @throws Exception\RecursionException if the XML tree is deeper than the
      *     allowed limit.
      */
@@ -172,6 +163,47 @@ class Xml2Json
             $childArray['@text'] = $value;
         }
 
-        return [$name => $childArray];
+        return [$name => (object)$childArray];
+    }
+
+    /**
+     * Converts XML to JSON.
+     *
+     * Converts an XML formatted string into a PHP array.
+     *
+     * The caller of this function needs to provide only the first parameter,
+     * which is an XML formatted string.
+     *
+     * The second parameter, also optional, allows the user to select if the
+     * XML attributes in the input XML string should be included or ignored
+     * during the conversion.
+     *
+     * This function converts the XML formatted string into a PHP array via a
+     * recursive function; it DOES NOT converts that array to json via
+     * Json::encode().
+     *
+     * NOTE: Encoding native javascript expressions via Zend\Json\Expr is not
+     * possible.
+     *
+     * @param string $xmlStringContents XML String to be converted.
+     * @param  bool $ignoreXmlAttributes Include or exclude XML attributes in
+     *     the conversion process.
+     * @return array a PHP array.
+     * @throws Exception\RuntimeException If the input not a XML formatted string.
+     */
+    public static function processXmlContent($xmlStringContents, $ignoreXmlAttributes = true)
+    {
+        // Load the XML formatted string into a Simple XML Element object.
+        $simpleXmlElementObject = XmlSecurity::scan($xmlStringContents);
+
+        // If it is not a valid XML content, throw an exception.
+        if (! $simpleXmlElementObject) {
+            throw new Exception\RuntimeException('Function processXmlContent was called with invalid XML');
+        }
+
+        // Call the recursive function to convert the XML into a PHP array.
+        $resultArray = static::processXml($simpleXmlElementObject, $ignoreXmlAttributes);
+
+        return $resultArray;
     }
 }
