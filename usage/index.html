@@ -7,12 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Convert XML documents to JSON">  
-    <link rel="canonical" href="https://docs.zendframework.com/zend-xml2json/usage/">
+    <link rel="canonical" href="https://docs.zendframework.com/usage/">
     <link rel="shortcut icon" href="../img/favicon.ico">
 
     <title>Usage - zend-xml2json - Zend Framework Docs</title>
 
-    <link rel="stylesheet" href="../css/styles-5cfabd53ee.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body id="page-top">
 
@@ -146,9 +146,9 @@
     <div class="laminas-announcement">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12">
-                Zend Framework transitions to the Linux Foundation. <a href="https://getlaminas.org">Learn More.</a>
-            </div>
+            <div class="col-xs-12"><strong>
+                This package has moved. Visit its replacement, <a href="https://docs.laminas.dev/laminas-xml2json/">laminas/laminas-xml2json.</a>
+            </strong></div>
         </div>
     </div>
 </div>
@@ -214,7 +214,9 @@ to instruct the conversion logic as to whether or not to ignore XML attributes
 during the conversion process. If the optional flag for converting attributes is
 not provided, then the default behavior is to ignore the XML attributes.</p>
 <p>A basic example follows:</p>
-<p> <pre class=codehilite><code class=language-php>$jsonContents = Zend\Xml2Json\Xml2Json::fromXml($xmlStringContents, true);</code></pre></p>
+<pre><code class="language-php">$jsonContents = Zend\Xml2Json\Xml2Json::fromXml($xmlStringContents, true);
+</code></pre>
+
 <p><code>Zend\Xml2Json\Xml2Json::fromXml()</code> converts the XML formatted string input
 parameter and returns the equivalent JSON formatted string output. In case of an
 XML input format error or conversion logic error, it raises an exception.</p>
@@ -227,7 +229,7 @@ output string returned from <code>Zend\Xml2Json\Xml2Json::fromXml()</code>. This
 passes a boolean false to the second argument in order to receive a
 representation of the XML attributes in the returned JSON.</p>
 <p>First, let's look at the XML:</p>
-<p> <pre class=codehilite><code class=language-xml>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;books&gt;
     &lt;book id=&quot;1&quot;&gt;
         &lt;title&gt;Code Generation in Action&lt;/title&gt;
@@ -246,13 +248,17 @@ representation of the XML attributes in the returned JSON.</p>
         &lt;author&gt;&lt;first&gt;Jack&lt;/first&gt;&lt;last&gt;Herrington&lt;/last&gt;&lt;/author&gt;
         &lt;publisher&gt;O'Reilly&lt;/publisher&gt;
     &lt;/book&gt;
-&lt;/books&gt;</code></pre></p>
+&lt;/books&gt;
+</code></pre>
+
 <p>Assuming that the above is captured in the variable <code>$xml</code>, we'll now pass it to
 the following code:</p>
-<p> <pre class=codehilite><code class=language-php>// Passing the second parameter to ensure we get attributes as well.
-$json = Zend\Xml2Json\Xml2Json::fromXml($xml, false);</code></pre></p>
+<pre><code class="language-php">// Passing the second parameter to ensure we get attributes as well.
+$json = Zend\Xml2Json\Xml2Json::fromXml($xml, false);
+</code></pre>
+
 <p>This results in the following JSON:</p>
-<p> <pre class=codehilite><code class=language-json>{
+<pre><code class="language-json">{
    &quot;books&quot; : {
       &quot;book&quot; : [ {
          &quot;@attributes&quot; : {
@@ -281,7 +287,8 @@ $json = Zend\Xml2Json\Xml2Json::fromXml($xml, false);</code></pre></p>
          &quot;publisher&quot; : &quot;O'Reilly&quot;
       }
    ]}
-}</code></pre></p>
+}
+</code></pre>
 
 
 
@@ -390,7 +397,7 @@ $json = Zend\Xml2Json\Xml2Json::fromXml($xml, false);</code></pre></p>
             
             <div class="col-md-9">
                 <h4 class="footer__headline">Copyright</h4>
-                <p>&copy; 2006-2019 by <a href="https://www.zend.com/">Zend</a>, a <a href="https://www.roguewave.com/">Rogue Wave Company</a>.</p>
+                <p>&copy; 2006-2020 by <a href="https://www.zend.com/">Zend</a> by <a href="https://www.perforce.com/">Perforce</a>.</p>
             </div>
 
             
@@ -398,10 +405,10 @@ $json = Zend\Xml2Json\Xml2Json::fromXml($xml, false);</code></pre></p>
                 <h4 class="footer__headline">Support</h4>
                 <ul class="support__list">
                     <li class="support__list-item">
-                        <a href="https://discourse.zendframework.com" class="support__link" title="Forum"><i class="fa fa-comments"></i></a>
+                        <a href="https://discourse.laminas.dev" class="support__link" title="Forum"><i class="fa fa-comments"></i></a>
                     </li>
                     <li class="support__list-item">
-                        <a href="https://zendframework-slack.herokuapp.com" class="support__link" title="Chat"><i class="fa fa-slack"></i></a>
+                        <a href="https://laminas.dev/chat/" class="support__link" title="Chat"><i class="fa fa-slack"></i></a>
                     </li>
                     <li class="support__list-item">
                         <a href="https://github.com/zendframework" class="support__link" title="Github"><i class="fa fa-github"></i></a>
@@ -409,27 +416,28 @@ $json = Zend\Xml2Json\Xml2Json::fromXml($xml, false);</code></pre></p>
                     <li class="support__list-item">
                         <a href="https://twitter.com/zfdevteam" class="support__link" title="Twitter"><i class="fa fa-twitter"></i></a>
                     </li>
-                    <li class="support__list-item">
-                        <a href="https://tinyletter.com/mwopzend" class="support__link" title="Newsletter"><i class="fa fa-envelope"></i></a>
-                    </li>
-                    <li class="support__list-item">
-                        <a href="https://framework.zend.com/blog/feed-rss.xml" class="support__link" title="Blog feed"><i class="fa fa-rss"></i></a>
-                    </li>
-                    <li class="support__list-item">
-                        <a href="https://framework.zend.com/security/feed" class="support__link" title="Security feed"><i class="fa fa-rss-square"></i></a>
-                    </li>
                 </ul>
             </div>
         </div>
     </div>
 </footer>
 
+<nav class="cookie-bar navbar navbar-fixed-bottom navbar-default hidden">
+    <div class="container">
+        <p class="navbar-text">
+            We use cookies to allow you to dismiss dialogs such as the Laminas
+            Project notification.
+        </p>
+        <button type="button" class="cookie-button btn btn-default navbar-btn">Allow Cookies</button>
+    </div>
+</nav>
+
     <script>
         var base_url = '..',
             siteName = 'zend-xml2json';
     </script>
-    <script src="../js/scripts-8d7ae56abf.js"></script>
-        <script src="../search/main.js"></script>
+    <script src="/js/scripts.js"></script>
+    <script src="../search/main.js"></script>
 
     
     <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
